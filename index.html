@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUD Restaurant</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Setări Globale */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFF8F0;
+            color: #5C4B43;
+        }
+
+        /* Tipurile de logo */
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            color: #5C4B43;
+            text-decoration: none;
+        }
+
+        /* HEADER */
+        header {
+            height: 90px;
+            background-color: #F4E3D3;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10%;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #5C4B43;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 350px;
+            background-color: #FFD6B0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            padding: 0 10%;
+        }
+
+        .hero-img {
+            width: 400px;
+            height: 250px;
+            object-fit: cover;
+            /* Înlocuiește src-ul în HTML cu imaginea ta din Figma */
+        }
+
+        .hero-text {
+            max-width: 450px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* SERVICES SECTION */
+        .services {
+            padding: 60px 10%;
+            text-align: center;
+            background-color: #FFF8F0;
+        }
+
+        .services h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 260px;
+            min-height: 220px;
+            border: 1px solid rgba(92, 75, 67, 0.3);
+            border-radius: 16px;
+            padding: 20px;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        /* FOOTER */
+        footer {
+            height: 100px;
+            background-color: #D9B99B;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10%;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo span {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+
+        .footer-logo small {
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+        .footer-info {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* Stilizare pentru link-urile acționabile */
+        .info-item a {
+            color: #5C4B43;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .info-item a:hover {
+            opacity: 0.7;
+            text-decoration: underline;
+        }
+
+        .info-item i {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: #5C4B43;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">GUD</a>
+        <nav>
+            <ul>
+                <li><a href="#">Acasă</a></li>
+                <li><a href="#">Servicii</a></li>
+                <li><a href="#">Despre</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="assets/img/imag 1.avif" alt="Interior Restaurant GUD" class="hero-img">
+        
+        <div class="hero-text">
+            <h1>GUD<br>by Alexandru Comerzan</h1>
+            <p>Bucătărie delicioasă, preparate din ingrediente proaspete și servicii de calitate.</p>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2>SERVICII</h2>
+        
+        <div class="cards-container">
+            <div class="card">
+                <img src="assets/img/imag 2.avif" alt="Livrare">
+                <h3>Livrare Rapidă</h3>
+                <p>Livrăm mâncarea rapid, oriunde în Chișinău</p>
+            </div>
+
+            <div class="card">
+                <img src="assets/img/imag 3.avif" alt="Meniu">
+                <h3>Meniu Premium</h3>
+                <p>Bucate alese, pregătite cu grijă din ingrediente proaspete</p>
+            </div>
+
+            <div class="card">
+                <img src="assets/img/imag 4.avif" alt="Rezervare">
+                <h3>Rezervări online</h3>
+                <p>Rezervă masa online simplu și rapid, în doar câteva click-uri</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">
+            <span>GUD</span>
+            <small>— RESTAURANT —</small>
+        </div>
+
+        <div class="footer-info">
+            <div class="info-item">
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+373545499">+373 545 499</a>
+            </div>
+
+            <div class="info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <a href="https://maps.app.goo.gl/search/Strada+Mihail+Sadoveanu+19,+MD-2075,+Chișinău" target="_blank" rel="noopener noreferrer">
+                    Strada Mihail Sadoveanu 19,<br>MD-2075, Chișinău
+                </a>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>
