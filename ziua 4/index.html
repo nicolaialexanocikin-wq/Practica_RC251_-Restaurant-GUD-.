@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proiect Finalizat - Ziua 4</title>
+    <style>
+        /* =========================================
+           1. RESET ȘI VARIABILE
+           ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           2. NAVIGAȚIE SMART CU GLASSMORPHISM
+           ========================================= */
+        .smart-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 8%;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #2563eb;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 600;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        /* Micro-animație: Underline animat (Sarcina 1) */
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #2563eb;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* =========================================
+           3. GRID AUTO-ADAPTIV (ZERO MEDIA QUERIES)
+           ========================================= */
+        .services-section {
+            padding: 5rem 8%;
+        }
+
+        .services-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            color: #0f172a;
+        }
+
+        .services-grid {
+            display: grid;
+            /* EXPLICAȚIE 1fr: 
+               Reprezintă o fracțiune din spațiul liber disponibil. 
+               Combinat cu auto-fit, permite cardurilor să ocupe tot rândul 
+               în mod egal, dar fără a scădea sub pragul de 280px.
+            */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Micro-animație: Card Hover (Sarcina 1) */
+        .service-card {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+
+        /* =========================================
+           4. SECȚIUNEA MISIUNE (ORDER LOGIC)
+           ========================================= */
+        .mission-section {
+            padding: 5rem 8%;
+            background-color: #ffffff;
+        }
+
+        .mission-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .mission-text {
+            flex: 1 1 400px;
+            order: 2; /* Apare după imagine pe ecrane mici */
+        }
+
+        .mission-image {
+            flex: 1 1 400px;
+            order: 1; /* Apare deasupra textului pe ecrane mici */
+        }
+
+        .mission-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            display: block;
+        }
+
+        /* Desktop Adjustment: Dacă lățimea permite, vizual textul va fi la stânga 
+           prin inversarea containerului dacă se dorește, dar pentru Sarcina 3 
+           ordonarea prin 'order' este soluția tehnică cerută. */
+
+    </style>
+</head>
+<body>
+
+    <nav class="smart-nav">
+        <div class="logo">RC_Digital</div>
+        <ul class="nav-links">
+            <li><a href="#servicii">Servicii</a></li>
+            <li><a href="#misiune">Misiune</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="servicii" class="services-section">
+            <h2>Servicii Inteligente</h2>
+            <div class="services-grid">
+                <article class="service-card">
+                    <h3>Dezvoltare Web</h3>
+                    <p>Site-uri performante construite cu tehnologii moderne pentru viteză maximă.</p>
+                </article>
+                <article class="service-card">
+                    <h3>UI/UX Design</h3>
+                    <p>Interfețe intuitive care pun utilizatorul pe primul loc în orice interacțiune.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Strategie Cloud</h3>
+                    <p>Migrare și optimizare în cloud pentru scalabilitate și securitate sporită.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Securitate IT</h3>
+                    <p>Audituri și soluții de protecție împotriva celor mai noi vulnerabilități.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Analiză Date</h3>
+                    <p>Transformăm datele brute în informații valoroase pentru afacerea ta.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Mentenanță 24/7</h3>
+                    <p>Suport tehnic constant pentru a asigura continuitatea proceselor tale digitale.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="misiune" class="mission-section">
+            <div class="mission-container">
+                <div class="mission-text">
+                    <h2>Misiunea Noastră</h2>
+                    <p>Credem într-un web accesibil și rapid. Implementăm soluții care nu doar arată bine, ci funcționează impecabil pe orice dispozitiv, eliminând complexitatea inutilă a codului tradițional.</p>
+                </div>
+                <div class="mission-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Echipa lucrând la proiect">
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

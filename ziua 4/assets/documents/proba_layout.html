@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <style>
+        /* Provocarea A: Flexbox */
+        .flex-container {
+            display: flex;
+            height: 80vh;
+            border: 4px double black;
+            position: relative;
+            justify-content: space-between; /* Împinge box-1 la start și box-3 la final */
+            align-items: flex-start;
+        }
+
+        .box { width: 50px; height: 50px; background: red; border: 1px solid white; }
+
+        .box-2 {
+            /* Folosim margin: auto pentru a centra perfect pe ambele axe */
+            /* Aceasta este metoda "inteligentă" menționată în hint */
+            margin: auto; 
+        }
+
+        .box-3 {
+            /* Rupem alinierea pentru a merge jos */
+            align-self: flex-end;
+        }
+
+        /* Provocarea B: Grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Două coloane egale */
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .grid-item { background: rgba(0, 150, 255, 0.5); padding: 20px; border: 1px solid blue; }
+
+        .grid-item:first-child {
+            grid-column: span 2; /* Ocupă 2 coloane (lățime completă) */
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="box box-1">1</div>
+        <div class="box box-2">2</div>
+        <div class="box box-3">3</div>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item">Element 1 (Full width)</div>
+        <div class="grid-item">Element 2</div>
+        <div class="grid-item">Element 3</div>
+        <div class="grid-item">Element 4</div>
+    </div>
+</body>
+</html>

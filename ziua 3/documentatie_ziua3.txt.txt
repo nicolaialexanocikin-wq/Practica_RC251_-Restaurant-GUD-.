@@ -1,0 +1,26 @@
+1. 3 reguli noi despre formulare HTML.
+
+1. Folosește etichete corecte pentru input: <input>, <textarea>, <select> sunt elementele principale.
+Exemplu:
+<input type="text" name="nume">
+
+2. Adaugă atributul name la fiecare câmp: Fără name, datele NU sunt trimise la server.
+Exemplu:
+<input type="email" name="email">
+
+3.Folosește <label> pentru accesibilitate: Ajută utilizatorii și face formularul mai clar.
+Exemplu:
+<label for="nume">Nume:</label>
+<input id="nume" type="text" name="nume">
+
+
+2. Explicația Box Model (Margin vs Padding).
+Box Model = modul în care browserul calculează spațiul unui element.
+Padding = interior
+Margin = exterior
+
+
+3. Sintaxa corectă a unui selector de clasă.
+.clasa {
+  color: red;
+}

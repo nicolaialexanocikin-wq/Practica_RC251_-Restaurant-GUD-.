@@ -1,0 +1,12 @@
+1.Cum se împarte spațiul: 
+Dacă toate elementele au flex-grow: 1, spațiul rezidual este împărțit în mod egal. Dacă un element are flex-grow: 2, acesta va primi o porție dublă din spațiul liber față de celelalte.
+
+De ce un element „crește” mai repede? 
+Ritmul de creștere este proporțional cu valoarea numerică setată. Un element cu o valoare mai mare „revendică” o cotă mai mare din spațiul suplimentar.
+
+
+2.Funcționează doar atunci când există mai multe rânduri de elemente (adică ai setat flex-wrap: wrap) și există spațiu suplimentar pe axa secundară.
+Dacă ai un singur rând, align-content nu are niciun efect. Acesta determină spațierea dintre rânduri (ex: să fie grupate la început, la final sau distribuite egal).
+
+
+3.În loc să calculezi numărul coloanei de start și de final (ex: grid-column: 1 / 3), atribui fiecărui element un nume folosind proprietatea grid-area (ex: header, nav, main).
