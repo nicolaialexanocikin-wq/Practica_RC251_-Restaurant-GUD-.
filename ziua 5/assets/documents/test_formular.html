@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Formular - Ziua 5</title>
+    <style>
+        /* Setăm variabila CSS pe :root */
+        :root {
+            --bg-color: #f4f4f9;
+        }
+        body {
+            background-color: var(--bg-color);
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            transition: background-color 0.3s ease;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 400px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input { width: 100%; padding: 8px; box-sizing: border-box; }
+    </style>
+</head>
+<body>
+
+    <form onsubmit="event.preventDefault(); alert('Formular validat cu succes!');">
+        <h2>Înregistrare</h2>
+
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" pattern="[a-z0-9]{5,}" title="Minim 5 caractere, doar litere mici și cifre" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Parolă:</label>
+            <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[\W_]).{8,}" title="Minim 8 caractere, o literă mare, un număr, un simbol" required>
+        </div>
+
+        <div class="form-group">
+            <label for="data_rezervare">Data Rezervării (Mai 2026):</label>
+            <input type="date" id="data_rezervare" name="data_rezervare" min="2026-05-01" max="2026-05-31" required>
+        </div>
+
+        <div class="form-group">
+            <label for="theme_color">Culoare Temă:</label>
+            <input type="color" id="theme_color" name="theme_color" value="#f4f4f9" oninput="document.documentElement.style.setProperty('--bg-color', this.value)">
+        </div>
+
+        <button type="submit" style="padding: 10px 15px; background: #333; color: white; border: none; cursor: pointer;">Test Formular</button>
+    </form>
+
+</body>
+</html>
